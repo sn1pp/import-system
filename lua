@@ -81,7 +81,7 @@ function modules:import(module,to_import,global,dev)
 end
 
 local config = {
-	name = "Func_Addon",
+	name = "ExtraFunctions",
 	version = "v1",
 	developer = "",
 	state = "Stable"
