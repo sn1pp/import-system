@@ -81,22 +81,4 @@ function modules:import(module,to_import,global,dev)
 	return returned
 end
 
-local config = {
-	name = "Example",
-	version = "v1",
-	developer = "Dummy",
-	state = "Stable"
-}
-local function_names = {
-	"example",
-}
-local functions = {
-	["1"] = function(str)
-		print(str)
-	end,
-}
-modules:Init(config,function_names,functions)
-
-local ok = modules:import("Examples",{"example"},false,"Dummy")
-
-ok.example("test")
+return modules
