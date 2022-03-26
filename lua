@@ -80,4 +80,26 @@ function modules:import(module,to_import,global,dev)
 	return returned
 end
 
+local config = {
+	name = "Func_Addon",
+	version = "v1",
+	developer = "",
+	state = "Stable"
+}
+local function_names = {
+	"getvirtualasset",
+}
+local functions = {
+	["1"] = function(type,link,name)
+		local ga = getsynasset or getcustomasset
+		if type ~= "jpg" or type ~= "png" then
+			type = "jpg"
+		end
+		name = name or "temp"..tostring(math.random(1, 10000)).."."..type
+		writefile(name, game:HttpGet(link))
+		return ga(name), delfile(name)
+	end
+}
+modules:Init(config,function_names,functions)
+
 return modules
