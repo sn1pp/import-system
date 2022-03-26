@@ -1,5 +1,4 @@
 getgenv().all_modules = nil
-getgenv().all_modules = loadstring()
 local modules = {}
 function modules:Init(m_config,m_functions_names,m_functions)
 	if all_modules == nil then
